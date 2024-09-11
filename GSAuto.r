@@ -14,7 +14,7 @@ GSAuto <- function(idat_dir,platform){
   # Construct the file path based on the platform
   platform_paths <- c("27k", "450k", "850k", "935k", "MSA")
   if (platform %in% platform_paths) {
-    base_path <- paste0("/Volumes/Newsmy/甲基化常规分析/gsauto_manifest/", platform, "/")
+    base_path <- paste0("data/", platform, "/")
     controlIdx <- readRDS(paste0(base_path, "negControl.rds"))
     manifest <- readRDS(paste0(base_path, "manifest.rds"))
   } else {
@@ -163,7 +163,6 @@ GSAuto <- function(idat_dir,platform){
   rownames(Intensity_matrix) <- rownames(final.sset)
   colnames(Intensity_matrix) <- files
 
-  # 将所有矩阵打包成一个list
   result_list <- list(
     detect_re = detect_re,
     beta_matrix = beta_matrix,
