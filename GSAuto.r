@@ -34,7 +34,7 @@ GSAuto <- function(idat_dir,platform){
   cat('loading', length(file), 'idat from', idat_dir, '\n')
   
   ####Initialization####
-  detect_rates <- c()
+  detect_rate <- c()
   qc_res <- c()
   beta_matrix <- matrix(rep(0),nrow(manifest),length(files))
   pval_matrix <- matrix(rep(0),nrow(manifest),length(files))
